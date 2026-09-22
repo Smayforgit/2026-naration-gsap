@@ -1,2 +1,4 @@
 # 2026-naration-gsap
-Projet de page narrative utilisant GSAP.
+Projet de onepage narrative utilisant GSAP.
+
+Projet réaliser au sein de L'ESD
