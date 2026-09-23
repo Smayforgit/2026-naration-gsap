@@ -1,0 +1,94 @@
+/* Bases -------------------------- */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Variables-------------------------- */
+
+
+/* Typograhies -------------------------- */
+
+
+/* Design de la page -------------------------- */
+
+.h100{
+    min-height: 100vh;
+    min-height: 100svh; /* optionel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 1ere section -------------------------- */
+
+.sect1{
+    background-image: url('assets/img/fond-accueil.png');
+    background-size: cover;
+
+
+}
+.block1{
+background-image: url(assets/img/logovalo.webp);    
+    width: 200px;
+    height: 200px;
+}
+
+
+/* 2eme section-------------------------- */
+
+.sect2{
+    background-image: url('assets/img/fond-champions-visuel.png');
+    background-size: cover;
+}
+.block2{
+    background-color: black;
+    width: 200px;
+    height: 200px; 
+}
+
+/* 3emeSection ------------------ */
+.sect3{
+    background-image: url('assets/img/fond-collection-clair.png');
+}
+/* 3eme Block -------- */
+
+.block3{
+    background-color: black;
+    width: 200px;
+    height: 200px;
+}
+
+/* 4eme section -------------------------- */
+
+.sect4{
+    background-image: url('assets/img/fond-warden.png');
+}
+/* 4eme block --------- */
+
+.block4{
+    background-color: black;
+    width: 200px;
+    height: 200px;
+}
+
+.cardvalo1{
+    min-height: 100vh;
+    min-height: 100svh; /* optionel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardvalo2{
+    min-height: 100vh;
+    min-height: 100svh; /* optionel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
