@@ -1,58 +1,43 @@
-/* Import ------------------------------------ */
+gsap.registerPlugin(ScrollTrigger);
 
-gsap.registerPlugin(ScrollTrigger, Observer, ScrollToPlugin,Draggable,MotionPathPlugin,InertiaPlugin);
+const heroText = gsap.timeline({ delay: .25 });
 
-/* variables ----------------------------------------- */
+heroText
+  .from(".hero-subtitle", {
+    opacity: 0, 
+    x: -28, 
+    duration: .55, 
+    ease: "power3.out" 
+  })
+  .from(".hero-title", {
+    opacity: 0, 
+    y: 55, 
+    duration: .85, 
+    ease: "power4.out" 
+  }, "-=.18"); 
 
-/* Fonctions ----------------------------------------- */
+gsap.to("#valorant-header-logo", {
+    rotation: 720,
+    ease: "none",
+    scrollTrigger: {   
+    trigger: "body",
+    start: "top top",
+    end: "max",
+    scrub: true
+    }
+});
 
-/* Animation premier bloc ---------------------------- */
-gsap.from("#movingBlock1", {
-    x: '-400px', 
-    rotation: 360, 
-    duration: 2,
-    repeat: true, 
-   
-})
+const championsStyleButtons = document.querySelectorAll('.champions-style-button');
+const championsBundleVisual = document.querySelector('.champions-bundle-visual');
 
-/* Animation deuxieme bloc ---------------------------- */
-gsap.from("#movingBlock2", {
+championsStyleButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    championsStyleButtons.forEach((item) => {
+      const active = item === button;
+      item.classList.toggle('is-active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
 
-    scrollTrigger: {
-        trigger: "#section2",
-        start: 'top 50%', 
-        end: 'top 10%', 
-        markers:true,
-        id: 'section2', 
-        scrub: 1, 
-        toggleActions: 'play none reverse reset', 
-    },
-
-    
-    y: '50vh', 
-    rotation: 1200, 
-    duration: 2,
-   
-})
-
-/* Animation trsoisième bloc ---------------------------- */
-let tl = gsap.timeline({
-    repeat:-1,
-    yoyo: true,
-})
-
-tl.to("#movingBlock3",{x:100,})
-.to("#movingBlock3",{y:100,})
-.to("#movingBlock3",{x:-100,})
-.to("#movingBlock3",{y:-100,})
-
-/* Animation quatrieme bloc - Draggable ---------------------------- */
-
-Draggable.create("#movingBlock4",{
-    type: "y,x",
-    imertia: true,
-    dragRestistance: 0.5
-    //type: "rotation",//
-
-
-})
+    championsBundleVisual.dataset.style = button.textContent.trim();
+  });
+});

@@ -6,49 +6,114 @@
     <title>Projet GSAP</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="page-top">
+    <!-- DÉBUT DU HEADER -->
+    <header class="site-header">
+        <h1 class="site-title">VALORANT</h1>
+        <img id="valorant-header-logo" class="valorant-header-logo" src="assets/img/logovalo.webp" alt="Logo Valorant">
+        <nav class="site-navigation">
+            <a class="site-navigation-link" href="#champions-collection">Champions 2026</a>
+            <a class="site-navigation-link" href="#warden-section">Le Warden</a>
+            <a class="site-navigation-link" href="https://playvalorant.com/fr-fr/news/tags/patch-notes/" >Mise à jour 13.06</a>
+        </nav>
+    </header>
+    <!-- FIN DU HEADER -->
 
+    <!-- DÉBUT SECTION 1 : ACCUEIL -->
+    <section id="valorant-hero" class="fullscreen-section valorant-hero">
+        <div class="valorant-hero-wrapper">
+          <div class="valorant-hero-content">
+            <p class="hero-subtitle">CHAMPIONS 2026</p>
+            <h2 class="hero-title">L'ARÈNE<br>VOUS ATTEND.</h2>
+            <a class="hero-cta" href="#champions-collection">Découvrir la collection <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+    
+      <video class="valorant-hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="assets/vidéo/fragordie2026.mp4" type="video/mp4">
+      </video>
+    </section>
+    <!-- FIN SECTION 1 : ACCUEIL -->
 
-    <!-- Section 1-------------------->
-     <section id="section1" class="h100 sect1"> 
-        <div id="movingBlock1" class="block1">
+    <!-- DÉBUT SECTION 2 : COLLECTION CHAMPIONS -->
+    <section class="content-section champions-collection" id="champions-collection">
+      <!-- Numéro et nom de la section. -->
+      <div class="section-heading"><span class="section-number">01 / COLLECTION ÉVÉNEMENT</span><i></i><span class="section-context">CHAMPIONS SHANGHAI</span></div>
+
+      <!-- Grille qui contient le visuel interactif et sa description. -->
+      <div class="champions-collection-layout">
+        <!-- Cadre de l’image : data-style est modifié par le JavaScript. -->
+        <div class="champions-bundle-visual" data-style="ATTAQUANT">
+          <img src="assets/img/phantom.webp" alt="Bundle Champions 2026">
+
+          <!-- Le message change selon la réussite du glissement. -->
+          <p class="champions-fan-hint" aria-live="polite">GLISSE L’ÉVENTAIL SUR LE C</p>
         </div>
 
-     </section>
+        <!-- Description et boutons de style de la collection. -->
+        <div class="champions-collection-details">
+          <p class="champions-subtitle section-subtitle--accent">UN BUNDLE POUR LES CHAMPIONS</p>
+          <h2 class="champions-title">LA SCÈNE<br>EST À <em>VOUS.</em></h2>
+          <p class="champions-description">La Phantom Champions et son éventail de mêlée célèbrent les moments qui font basculer une partie.</p>
 
-     <!-- Section 2-------------------->
-     <section id="section2" class="h100 sect2"> 
-        <div id="movingBlock2" class="block2">
-    </div>
-     </section>
+          <!-- Les boutons activent un aperçu coloré différent. -->
+          <div class="champions-style-selector" role="group" aria-label="Choisir le style">
+            <span class="champions-style-label">CHOISIR UN STYLE</span>
+            <button class="champions-style-button is-active" type="button" aria-pressed="true">ATTAQUANT</button>
+            <button class="champions-style-button" type="button" aria-pressed="false">DÉFENSEUR</button>
+          </div>
 
-     <!-- Section 3-------------------->
-     <section id="section3" class="h100 sect3"> 
-        <div id="movingBlock3" class="block3"></div>
-     </section>
+          <!-- Liste des objets de la collection. -->
+          <div class="champions-items-list">
+            <p class="champions-item"><b>01</b> CHAMPIONS PHANTOM</p>
+            <p class="champions-item"><b>02</b> ÉVENTAIL DE MÊLÉE</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FIN SECTION 2 : COLLECTION CHAMPIONS -->
 
-    <!-- Section 4-------------------->
-     <section id="section4" class="h100 sect4"> 
-        <div id="movingBlock4" class="block4"></div>
-     </section>
-     
+    <!-- DÉBUT SECTION 3 : WARDEN -->
+    <section class="content-section warden-section" id="warden-section">
+      <!-- Numéro et version de la mise à jour. -->
+      <div class="section-heading"><span class="section-number">02 / NOUVELLE ARME</span><i></i><span class="section-context">PATCH 13.06</span></div>
 
+      <!-- Description à gauche et illustration de l’arme à droite. -->
+      <div class="warden-layout">
+        <div>
+          <p class="warden-subtitle section-subtitle--accent">FUSIL AUTOMATIQUE · 2 900 CR</p>
+          <h2 class="warden-title">LE<br><em>WARDEN.</em></h2>
+          <p class="warden-description">Précision à longue portée. Une lunette 2× et 18 balles pour tenir la ligne.</p>
 
+        </div>
 
+        <!-- Image du Warden. -->
+        <img class="warden-image" src="assets/img/warden.webp" alt="Fusil automatique Warden">
+      </div>
 
-    <!-- Scrpits--------------------->
-    <!-- GSAP ---->
+      <!-- Quelques caractéristiques de l’arme. -->
+      <div class="warden-stats">
+        <div><b>2 900</b><small>CRÉDITS</small></div>
+        <div><b>2×</b><small>LUNETTE</small></div>
+        <div><b>18</b><small>BALLES / CHARGEUR</small></div>
+        <div><b>50</b><small>DÉGÂTS AU CORPS</small></div>
+      </div>
+    </section>
+    <!-- FIN SECTION 3 : WARDEN -->
+
+    <!-- SCRIPTS -->
     <script src="js/GSAP/gsap.min.js"></script>
-    <script src="js/GSAP/Draggable.min.js"></script>
-    <script src="js/GSAP/MotionPathPlugin.min.js"></script>
-    <script src="js/GSAP/ScrollToPlugin.min.js"></script>
     <script src="js/GSAP/ScrollTrigger.min.js"></script>
-    <script src="js/GSAP/InertiaPlugin.min.js" ></script>
+    <script src="js/main.js"></script>
 
-    <!-- Main---->
-     <script src="js/main.js"></script>
-
-
-    
+  <!-- DÉBUT DU FOOTER -->
+  <footer class="site-footer">
+    <a class="footer-logo-link" href="#page-top">
+      <img class="footer-logo" src="assets/img/logovalo.webp" alt="VALORANT">
+    </a>
+    <p class="footer-disclaimer">Projet étudiant non officiel. VALORANT et ses logos sont des marques de Riot Games.</p>
+    <a class="footer-top-link" href="#page-top">RETOUR EN HAUT ↑</a>
+  </footer>
+  <!-- FIN DU FOOTER -->
 </body>
 </html>

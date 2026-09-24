@@ -1,94 +1,334 @@
-/* Bases -------------------------- */
-*{
-    margin: 0px;
-    padding: 0px;
+/* POLICE PRINCIPALE DU SITE */
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("assets/typo/BarlowCondensed-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Variables-------------------------- */
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("assets/typo/BarlowCondensed-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("assets/typo/BarlowCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
-/* Typograhies -------------------------- */
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("assets/typo/BarlowCondensed-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
+/* COULEURS ET POLICE RÉUTILISÉES */
+:root {
+  --fond: #101014;
+  --clair: #f4f1ec;
+  --rouge: #ff4655;
+  --texte: #bdb8bb;
+  --titre: "Barlow Condensed", sans-serif;
+}
 
-/* Design de la page -------------------------- */
+/* RÉINITIALISATION DES MARGES ET DES ESPACEMENTS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.h100{
+/* DÉFILEMENT FLUIDE ENTRE LES ANCRES */
+html {
+  scroll-behavior: smooth; /* rend le défilement fluide */
+}
+
+/* STYLE GÉNÉRAL DE LA PAGE */
+body {
+  background: var(--fond);
+  color: var(--clair); 
+  font: 400 14px/1.4 "Barlow Condensed", sans-serif; 
+}
+
+/* STYLE PAR DÉFAUT DES LIENS */
+a {
+  color: inherit;
+  text-decoration: none; 
+}
+
+/* STYLE PAR DÉFAUT DES BOUTONS */
+button {
+  color: inherit; 
+  font: inherit; 
+  cursor: pointer; 
+}
+
+/* IMAGES RESPONSIVES */
+img {
+  max-width: 100%; 
+}
+
+/* DÉBUT DU HEADER */
+
+/* BARRE DE NAVIGATION FIXÉE EN HAUT */
+.site-header {
+
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 7%;
+  background: #101014;
+  border-bottom: 1px solid #ffffff25; /* ligne 2*/
+}
+
+/* LIENS DE NAVIGATION */
+.site-navigation {
+    display:flex;
+    gap: 20px;
+}
+
+/* APPARENCE DES LIENS DE NAVIGATION */
+.site-navigation a {
+
+    font-weight: 700;
+    transition: 0.25s;
+
+}
+
+/* EFFET AU SURVOL DES LIENS */
+.site-navigation a:hover {
+
+    font-size: 19px;
+    color: rgb(0, 0, 0);
+}
+
+/* LOGO DU HEADER */
+.valorant-header-logo {
+    width: 50px;
+}
+/* FIN DU HEADER */
+
+/* DÉBUT SECTION 1 : ACCUEIL */
+
+/* HAUTEUR ET CENTRAGE DE LA SECTION D'ACCUEIL */
+.fullscreen-section {
     min-height: 100vh;
     min-height: 100svh; /* optionel */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* VIDÉO EN ARRIÈRE-PLAN DE L'ACCUEIL */
+.valorant-hero-video { 
+  position: absolute; 
+  inset: 0; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  z-index: 0; 
 }
 
 /* 1ere section -------------------------- */
 
-.sect1{
+/* CONTENEUR DE LA SECTION D'ACCUEIL */
+.valorant-hero {
     background-image: url('assets/img/fond-accueil.png');
     background-size: cover;
-
-
-}
-.block1{
-background-image: url(assets/img/logovalo.webp);    
-    width: 200px;
-    height: 200px;
+    position: relative; 
+    overflow: hidden; 
+    isolation: isolate; 
 }
 
-
-/* 2eme section-------------------------- */
-
-.sect2{
-    background-image: url('assets/img/fond-champions-visuel.png');
-    background-size: cover;
+/* VOILE SOMBRE POUR LA LISIBILITÉ DU TEXTE */
+.valorant-hero::after {
+    content: ""; 
+    position: absolute; 
+    z-index: 1; 
+    inset: 0; 
+    pointer-events: none; 
+    background: linear-gradient(90deg, rgba(16,16,20,.88) 0%, rgba(16,16,20,.53) 46%, rgba(16,16,20,.18) 100%); /* assombrit le fond */
 }
-.block2{
-    background-color: black;
-    width: 200px;
-    height: 200px; 
-}
-
-/* 3emeSection ------------------ */
-.sect3{
-    background-image: url('assets/img/fond-collection-clair.png');
-}
-/* 3eme Block -------- */
-
-.block3{
-    background-color: black;
-    width: 200px;
-    height: 200px;
+/* SOUS-TITRE DE L'ACCUEIL */
+.hero-subtitle {
+  margin-bottom: 18px; 
+  color: var(--rouge); 
+  font-weight: 700; 
+  letter-spacing: .16em; 
 }
 
-/* 4eme section -------------------------- */
-
-.sect4{
-    background-image: url('assets/img/fond-warden.png');
-}
-/* 4eme block --------- */
-
-.block4{
-    background-color: black;
-    width: 200px;
-    height: 200px;
+/* TITRE PRINCIPAL DE L'ACCUEIL */
+.hero-title {
+  font-family: var(--titre); 
+  font-size: clamp(54px, 6vw, 100px); 
+  line-height: .84; 
+  letter-spacing: -.04em; 
 }
 
-.cardvalo1{
-    min-height: 100vh;
-    min-height: 100svh; /* optionel */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* LIEN D'ACTION DE L'ACCUEIL */
+.hero-cta {
+  display: inline-block; 
+  margin-top: 30px; 
+  padding-bottom: 7px; 
+  border-bottom: 2px solid var(--rouge); 
+  font-weight: 700; 
 }
 
-.cardvalo2{
-    min-height: 100vh;
-    min-height: 100svh; /* optionel */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+/* ESPACEMENT DU CONTENU D'ACCUEIL */
+.valorant-hero-content {
+  padding: 20px 0; 
 }
 
+/* POSITIONNEMENT DU TEXTE AU-DESSUS DE LA VIDÉO */
+.valorant-hero-wrapper {
+  position: relative; 
+  z-index: 2; 
+  width: min(78%, 1360px); 
+}
+/* FIN SECTION 1 : ACCUEIL */
 
+/* DÉBUT SECTION 2 : COLLECTION CHAMPIONS */
+/* ESPACEMENT COMMUN AUX SECTIONS DE CONTENU */
+.content-section { padding: 90px 10%; }
 
+/* FOND DE LA SECTION COLLECTION */
+.champions-collection { background: linear-gradient(135deg, #16151a, #21191b); }
 
+/* TITRE NUMÉROTÉ COMMUN AUX SECTIONS */
+.section-heading {
+  display: flex; 
+  align-items: center; 
+  gap: 18px; 
+  color: #ffffffa6; 
+  font-size: 9px; 
+  letter-spacing: .16em; 
+}
+
+.section-heading i { flex: 1; height: 1px; background: #ffffff38; }
+
+/* GRILLE IMAGE ET TEXTE DE LA COLLECTION */
+.champions-collection-layout {
+  display: grid; 
+  grid-template-columns: 1.1fr .9fr; 
+  align-items: center; 
+  gap: 8%; 
+  margin-top: 50px; 
+}
+
+/* CADRE DU VISUEL DE LA COLLECTION */
+.champions-bundle-visual {
+  position: relative; 
+  display: grid; 
+  place-items: center;
+  min-height: 390px; 
+  overflow: hidden; 
+  background: radial-gradient(ellipse, #5c2630, #20171b 65%); 
+}
+
+.champions-bundle-visual > img {
+  width: 100%; height: 100%; max-height: 480px; 
+  object-fit: contain; 
+  filter: drop-shadow(0 20px 30px #0009); 
+}
+
+.champions-fan-hint {
+  position: absolute; left: 50%; bottom: 12px; 
+  margin: 0; padding: 8px 10px; 
+  background: #101014cc; 
+  font-size: 8px; font-weight: bold; letter-spacing: .12em;
+  white-space: nowrap; 
+  transform: translateX(-50%); 
+}
+
+.section-subtitle--accent { color: var(--rouge); }
+
+.champions-title, .warden-title { font-size: clamp(58px, 7vw, 92px); }
+
+h2 em { color: var(--rouge); font-style: normal; }
+
+/* ZONE DES BOUTONS ATTAQUANT ET DÉFENSEUR */
+.champions-style-selector {
+  display: flex; align-items: center; flex-wrap: wrap; 
+  gap: 8px; margin: 28px 0; padding: 16px 0; 
+  border-block: 1px solid #ffffff30;
+}
+
+.champions-style-label { width: 100%; margin-bottom: 4px; color: var(--texte); font-size: 9px; letter-spacing: .12em; }
+
+.champions-style-button { padding: 9px 11px; border: 1px solid #ffffff3a; background: transparent; font-size: 9px; letter-spacing: .08em; }
+
+.champions-style-button.is-active { border-color: var(--rouge); background: var(--rouge); }
+
+.champions-item { display: flex; align-items: center; gap: 15px; font-size: 10px; letter-spacing: .1em; }
+
+.champions-items-list b { color: var(--rouge); }
+/* FIN SECTION 2 : COLLECTION CHAMPIONS */
+
+/* DÉBUT SECTION 3 : WARDEN */
+/* FOND DE LA SECTION WARDEN */
+.warden-section { background: url('assets/img/fond-warden.png') center/cover, #151418; }
+
+/* GRILLE TEXTE ET IMAGE DU WARDEN */
+.warden-layout { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; min-height: 350px; }
+
+.warden-title { margin: 20px 0; }
+
+.warden-image { width: 100%; max-height: 300px; object-fit: contain; filter: drop-shadow(0 20px 25px #0008); }
+
+/* GRILLE DES STATISTIQUES DU WARDEN */
+.warden-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid #ffffff44; }
+
+.warden-stats div { padding: 18px; border-right: 1px solid #ffffff33; }
+
+.warden-stats div:first-child { padding-left: 0; }
+
+.warden-stats div:last-child { border: 0; }
+
+.warden-stats b, .warden-stats small { display: block; }
+
+.warden-stats b { color: var(--rouge); font: 700 30px var(--titre); }
+
+.warden-stats small { color: var(--texte); font-size: 8px; letter-spacing: .12em; }
+/* FIN SECTION 3 : WARDEN */
+
+/* DÉBUT DU FOOTER */
+
+/* CONTENEUR DU PIED DE PAGE */
+.site-footer {
+  display: flex; /* choisit le mode d’affichage */
+  align-items: center; /* aligne les éléments sur l’axe vertical */
+  justify-content: space-between; /* répartit les éléments sur l’axe principal */
+  gap: 20px; /* définit l’espace entre les éléments */
+  padding: 24px 8%; /* définit l’espace intérieur */
+  border-top: 1px solid #ffffff25; /* Ligne (header same) */
+}
+
+/* LOGO DU PIED DE PAGE */
+.footer-logo {
+  width: 42px;
+  height: auto;
+}
+
+/* TEXTE LÉGAL DU PIED DE PAGE */
+.footer-disclaimer {
+  color: var(--texte); /* définit la couleur du texte */
+  font-size: 10px; /* définit la taille du texte */
+}
+
+/* LIEN DE RETOUR EN HAUT */
+.footer-top-link {
+  font-size: 9px; /* définit la taille du texte */
+}
+/* FIN DU FOOTER */
