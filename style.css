@@ -124,11 +124,11 @@ img {
 
 /* HAUTEUR ET CENTRAGE DE LA SECTION D'ACCUEIL */
 .fullscreen-section {
-    min-height: 100vh;
-    min-height: 100svh; /* optionel */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 100vh;
+  min-height: 100svh; /* optionel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* VIDÉO EN ARRIÈRE-PLAN DE L'ACCUEIL */
@@ -145,14 +145,14 @@ img {
 
 /* CONTENEUR DE LA SECTION D'ACCUEIL */
 .valorant-hero {
-    background-image: url('assets/img/fond-accueil.png');
-    background-size: cover;
-    position: relative; 
-    overflow: hidden; 
-    isolation: isolate; 
+  background-image: url('assets/img/fond-accueil.png');
+  background-size: cover;
+  position: relative; 
+  overflow: hidden; 
+  isolation: isolate; 
 }
 
-/* VOILE SOMBRE POUR LA LISIBILITÉ DU TEXTE */
+/* VOILE SOMBRE POUR LA LISIBILITE DU TEXTE */
 .valorant-hero::after {
     content: ""; 
     position: absolute; 
@@ -200,13 +200,13 @@ img {
 /* FIN SECTION 1 : ACCUEIL */
 
 /* DÉBUT SECTION 2 : COLLECTION CHAMPIONS */
-/* ESPACEMENT COMMUN AUX SECTIONS DE CONTENU */
+
+/* ESPACEMENT COMMUN AUX SECTIONS */
 .content-section { padding: 90px 10%; }
 
 /* FOND DE LA SECTION COLLECTION */
 .champions-collection { background: linear-gradient(135deg, #16151a, #21191b); }
 
-/* TITRE NUMÉROTÉ COMMUN AUX SECTIONS */
 .section-heading {
   display: flex; 
   align-items: center; 
@@ -243,15 +243,6 @@ img {
   filter: drop-shadow(0 20px 30px #0009); 
 }
 
-.champions-fan-hint {
-  position: absolute; left: 50%; bottom: 12px; 
-  margin: 0; padding: 8px 10px; 
-  background: #101014cc; 
-  font-size: 8px; font-weight: bold; letter-spacing: .12em;
-  white-space: nowrap; 
-  transform: translateX(-50%); 
-}
-
 .section-subtitle--accent { color: var(--rouge); }
 
 .champions-title, .warden-title { font-size: clamp(58px, 7vw, 92px); }
@@ -277,6 +268,7 @@ h2 em { color: var(--rouge); font-style: normal; }
 /* FIN SECTION 2 : COLLECTION CHAMPIONS */
 
 /* DÉBUT SECTION 3 : WARDEN */
+
 /* FOND DE LA SECTION WARDEN */
 .warden-section { background: url('assets/img/fond-warden.png') center/cover, #151418; }
 
